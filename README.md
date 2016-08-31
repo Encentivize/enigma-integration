@@ -10,13 +10,15 @@ Username - test
 password - test12345 
 header - Authorization: Basic dGVzdDp0ZXN0MTIzNDU= 
 ```
+
 This authentication header must be provided on every request to the api. If you do not you will get a 401 Unauthorised response with "Invalid username or password" in the body of the response.
 
 ## Issuing: 
 
 The path to issue a new value voucher is : 
+```
 https://ENIGMA_URL/{tenant}/definitions/{definitionId}/vouchers
-
+```
 You will need to POST the following data to the route: 
 
 ```
@@ -72,19 +74,17 @@ You should get an HTTP code of 201 (created) if successful, a 4xx if there is so
 ## Balance Check
 
 To check the state of a voucher, including the value on it, you can do a GET operation on: 
-
-$ENIGMA_URL/{tenant}/vouchers?voucherCode={voucherCode}
-
-eg https://$ENIGMA_URL/{tenant}/vouchers?voucherCode={voucherCode}
-
+```
+https://$ENIGMA_URL/{tenant}/vouchers?voucherCode={voucherCode}
+```
 It return the same object as the issue route, with all the extra data. Once again the fields above are the only ones needed for transacting. 
 
 ## Redeeming
 
 The path to redeem a voucher is a POST operation:
-
+```
 https://$ENIGMA_URL/{tenant}/{storeId}/vouchers/redeem?voucherCode={voucherCode}
- 
+``` 
 The {storeId} here is a store GUID to track where the voucher was redeemed. Voucher code in the query string is the voucherCode from the issue command above.
 
 The POST body contains the amount to redeem and an invoice/ reference number to tie back the amounts: 
@@ -94,9 +94,4 @@ The POST body contains the amount to redeem and an invoice/ reference number to 
     "redemptionAmount": 100
 }
 ```
-
-
-
-
-
 
