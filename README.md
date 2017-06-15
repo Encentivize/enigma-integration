@@ -159,5 +159,19 @@ The POST body contains the reason for revoking the voucher :
 ```
 You will receive a `200 OK` if the voucher was revoked succesfully, with log data in the body. 
 
+## Reports
+
+Reports can be accessed through GET Operations, with time ranges in the url
+
+Issuing Report
+
+```
+GET https://$ENIGMA_URL/{tenant}/reports/issueReport?startDate=2017-05-31T22:00:00.000Z&endDate=2017-06-15T21:59:59.999Z
+```
+ 
+Redemption Report
+```
+GET https://$ENIGMA_URL/{tenant}/reports/redemptionReconReport?startDate=2017-05-31T22:00:00.000Z&endDate=2017-06-15T21:59:59.999Z
+```
 
  
