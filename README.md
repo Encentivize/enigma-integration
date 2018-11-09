@@ -12,7 +12,7 @@ header - Authorization: Basic dGVzdDp0ZXN0MTIzNDU=
 
 This authentication header must be provided on every request to the api. If you do not you will get a 401 Unauthorised response with "Invalid username or password" in the body of the response.
 
-##Tenant informantion
+## Tenant Infromation
 
 The path to get tenant information :
 
