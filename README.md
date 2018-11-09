@@ -12,12 +12,14 @@ header - Authorization: Basic dGVzdDp0ZXN0MTIzNDU=
 
 This authentication header must be provided on every request to the api. If you do not you will get a 401 Unauthorised response with "Invalid username or password" in the body of the response.
 
-## Tenant Infromation
+## Tenant and Store Infromation
 
 The path to get tenant information :
 
 (GET)
 https://ENIGMA_URL/{tenant}/detail
+
+This will provide the user with needed info to continue
 
 ## Issuing
 
